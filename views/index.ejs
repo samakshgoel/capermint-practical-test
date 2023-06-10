@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capermint Realtime Chat App</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/client.js"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        h1 {
+            margin-top: 12px;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        .section {
+            max-width: 55%;
+            border-radius: 13px;
+            margin: auto;
+            height: 98%;
+            margin-bottom: 23px;
+            background-color: #96969677;
+            overflow: hidden;
+            background-image: url(/chat-bg.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border: none;
+            position: relative;
+        }
+
+        .chat-section {
+            width: 95%;
+            margin: auto;
+            height: 80%;
+            overflow-y: auto;
+        }
+
+        .message {
+            width: 24%;
+            padding: 10px;
+            margin: 17px 12px;
+            border-radius: 10px;
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        .message-left {
+            float: left;
+            clear: both;
+            margin: 5px 0px;
+            background-color: #F5FB7B;
+        }
+
+        .message-right {
+            float: right;
+            clear: both;
+            margin: 5px 0px;
+            background-color: #94f994;
+        }
+
+        .message-center {
+            margin: 5px auto;
+            text-align: center;
+            float: inherit;
+            clear: both;
+            width: fit-content;
+            background-color: #000000b3;
+            color: white;
+        }
+
+        .send-section {
+            position: absolute;
+            bottom: 10px;
+            width: 95%;
+            display: block;
+            left: 2.5%;
+        }
+
+        #send-form {
+            display: block;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        #user-message {
+            width: 90%;
+            border-radius: 6px;
+            height: 34px;
+            padding: 0px 8px;
+            border: 0.5px solid #c4c4c4;
+        }
+
+        .send-btn {
+            margin: 0 5px;
+            width: 10%;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 10px;
+            background-color: #94f994;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+    </nav>
+    <div class="section">
+        <h2 class="heading">Capermint Realtime Chat App(<%= name%>)</h2>
+        <div class="chat-section"></div>
+        <div class="send-section">
+            <form action="#" id="send-form">
+                <input type="text" name="user-message" id="user-message" placeholder="Write a message...">
+                <button class="send-btn" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
